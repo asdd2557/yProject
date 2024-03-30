@@ -1,0 +1,32 @@
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+  h2:
+    console:
+      enabled: true  # H2 Console을 사용할지 여부 (H2 Console은 H2 Database를 UI로 제공해주는 기능)
+      path: /h2-console  # H2 Console의 Path
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 354113929348-3v4ct8ntdq32lj785f7fiu25qk3ccf9t.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+jwt:
+  issuer: asdd2t557@gmail.com
+  secret_key: woqkfrmq12
+
+cloud:
+  aws:
+    credentials:
+      access-key: ${AWS_ACCESS_KEY_ID}
+      secret-key: ${AWS_SECRET_ACCESS_KEY}
+    region:
+      static: ${CLOUD_AWS_REGION_STATIC:ap-northeast-2}
