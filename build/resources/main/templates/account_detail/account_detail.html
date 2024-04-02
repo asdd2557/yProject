@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Account Details</title>
+</head>
+<body>
+<h1>Account Details</h1>
+<div th:if="${account}">
+    <p th:text="${'ID: ' + account.id}" />
+    <p th:text="${'Nickname: ' + account.nickname}" />
+    <!-- 기타 필요한 정보들을 추가 -->
+</div>
+<div th:if="${error}">
+    <p th:text="${error}" />
+</div>
+</body>
+</html>

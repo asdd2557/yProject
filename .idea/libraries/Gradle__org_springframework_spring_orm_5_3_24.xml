@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework:spring-orm:5.3.24" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.springframework" artifactId="spring-orm" version="5.3.24" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../gradle-7.6.4/caches/modules-2/files-2.1/org.springframework/spring-orm/5.3.24/256e029c2d8200294fe7fb5352ca2d1d7310dcad/spring-orm-5.3.24.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
