@@ -17,12 +17,12 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="86e23b50-d616-4c88-b690-c457da441c50">
-      <console name="Connection" type="STANDARD" schema="blog" session="Main"><![CDATA[create table users (
+      <console name="Connection" type="STANDARD" schema="blog" session="Main"><![CDATA[create table article_e (
     id bigint not null AUTO_INCREMENT,
+    author varchar(255) not null,
+    content varchar(255) not null,
     created_at timestamp,
-    email varchar(255) not null,
-    nickname varchar(255),
-    password varchar(255),
+    title varchar(255) not null,
     updated_at timestamp,
     primary key (id)
 );]]></console>
@@ -38,6 +38,9 @@
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="86e23b50-d616-4c88-b690-c457da441c50" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="86e23b50-d616-4c88-b690-c457da441c50" dataset="blog.article" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
