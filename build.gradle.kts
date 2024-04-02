@@ -57,6 +57,6 @@ tasks.withType<Test> {
 	useJUnitPlatform()
 }
 
-jar {
+tasks.jar {
 	enabled = false
 }
