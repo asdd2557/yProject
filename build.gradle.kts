@@ -56,3 +56,7 @@ dependencies { //라이브러리 넣는곳
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+jar {
+	enabled = false
+}
