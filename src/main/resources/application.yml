@@ -14,13 +14,14 @@ spring:
       client:
         registration:
           google:
-            client-id: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_ID}
-            client-secret: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_SECRET}
+            client-id: 354113929348-3v4ct8ntdq32lj785f7fiu25qk3ccf9t.apps.googleusercontent.com
+            client-secret: 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
             scope:
-              - emaila
+              - email
               - profile
 jwt:
-  secret_key: ${JWT_SECRET_KEY}
+  issuer: asdd2t557@gmail.com
+  secret_key: woqkfrmq12
 
 cloud:
   aws:
