@@ -17,10 +17,9 @@ spring:
             client-id: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_ID}
             client-secret: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_SECRET}
             scope:
-              - email
+              - emaila
               - profile
 jwt:
-  issuer: asdd2t557@gmail.com
   secret_key: ${JWT_SECRET_KEY}
 
 cloud:
