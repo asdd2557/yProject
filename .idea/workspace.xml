@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8115cda0-f993-49f9-bdd1-01d5d5f46fca" name="변경" comment="" />
+    <list default="true" id="8115cda0-f993-49f9-bdd1-01d5d5f46fca" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/cicd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cicd.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,6 +116,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\82108\Desktop\intelij\yproject\GameProject\.guthub" />
       <recent name="C:\Users\82108\Desktop\intelij\yproject\GameProject\src\main\resources\static\js" />
       <recent name="C:\Users\82108\Desktop\intelij\yproject\GameProject\src\main\resources\static\js\search" />
     </key>
