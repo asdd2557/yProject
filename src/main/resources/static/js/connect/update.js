@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function onPageEnter() {
     // 현재 URL 가져오기
     const currentURL = window.location.href;
-    const pattern = /^http:\/\/localhost:8080\/.*/;
+    const pattern = /^http:\/\/godding-elastic-env-2\.eba-mygzmyet\.ap-northeast-2\.elasticbeanstalk\.com\/.*/;
+
     // URL 패턴 확인
   if (pattern.test(currentURL)) {
    body = JSON.stringify({

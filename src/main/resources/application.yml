@@ -2,37 +2,31 @@ server:
   servlet:
     encoding:
       charset: UTF-8
-      enabled: ture
+      enabled: true
       force: true
-
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://asdd2t557:4AeWZdViQIeDKW0G@game.2iqyfyo.mongodb.net/game?retryWrites=true&w=majority&appName=Game
-
+      uri: ${SPRING_DATA_MONGODB_URI}
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
   jpa:
     show-sql: true
     properties:
       hibernate:
         format_sql: true
     defer-datasource-initialization: true
-  h2:
-    console:
-      enabled: true  # H2 Console을 사용할지 여부 (H2 Console은 H2 Database를 UI로 제공해주는 기능)
-      path: /h2-console  # H2 Console의 Path
   security:
     oauth2:
       client:
         registration:
           google:
-            client-id: 354113929348-3v4ct8ntdq32lj785f7fiu25qk3ccf9t.apps.googleusercontent.com
-            client-secret: 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
-            scope:
-              - email
-              - profile
+            client-id: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_ID}
+            client-secret: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_SECRET}
 jwt:
   secret_key: ${JWT_SECRET_KEY}
-
 cloud:
   aws:
     credentials:
@@ -40,3 +34,6 @@ cloud:
       secret-key: ${AWS_SECRET_ACCESS_KEY}
     region:
       static: ${CLOUD_AWS_REGION_STATIC:ap-northeast-2}
+logging:
+  level:
+    com.example.gameproject: INFO

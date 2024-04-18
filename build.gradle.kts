@@ -53,7 +53,8 @@ dependencies { //라이브러리 넣는곳
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	//Mongo DB
 	implementation ("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
-
+	//web socket
+	implementation("org.springframework.boot:spring-boot-starter-websocket")
 
 
 }
@@ -64,4 +65,18 @@ tasks.withType<Test> {
 
 tasks.jar {
 	enabled = false
+}
+
+// JAR 파일 빌드 후 ZIP 파일로 압축하는 작업 추가
+tasks.register<Zip>("zip") {
+	dependsOn(tasks.named("bootJar"))
+	from("$buildDir/libs") {
+		include("*.jar")
+	}
+	archiveFileName.set("demo-${version}.zip")
+	destinationDirectory.set(file("$buildDir/zip"))
+}
+
+tasks.named("build") {
+	dependsOn(tasks.named("zip"))
 }

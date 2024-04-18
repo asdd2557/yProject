@@ -2,7 +2,6 @@ package com.example.gameproject.repository;
 
 import com.example.gameproject.entity.Member_E;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 
 @Repository

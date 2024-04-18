@@ -1,10 +1,11 @@
-const eventSource = new EventSource("http://localhost:8080/sender/asdd2t557@gmail.com/receiver/cos")
+/*const eventSource = new EventSource("http://godding-elastic-env-2.eba-mygzmyet.ap-northeast-2.elasticbeanstalk.com/sender/asdd2t557@gmail.com/receiver/cos")
+
 eventSource.onmessage=(event)=> {
 console.log(1,event);
 const data = JSON.parse(event.data);
 console.log(2,data);
 }
-
+*/
 
 document.querySelector("#chatButton").addEventListener("click",() => {
 msgInput();

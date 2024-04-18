@@ -76,10 +76,13 @@ public class ConnectApiController {
     if ((Integer) meconnectE.get("matching") < (Integer) opconnectE.get("matching")) {
       gameE.setUser1(meconnectE.get("email").toString());
       gameE.setUser2(opconnectE.get("email").toString());
+
     } else {
       gameE.setUser1(opconnectE.get("email").toString());
       gameE.setUser2(meconnectE.get("email").toString());
     }
+    gameE.setTurn("0");
+    gameE.setTime("15");
     return gameService.save(gameE);
   }
 

@@ -23,7 +23,7 @@ public class TestController {
 
   @GetMapping("/test")
   public String getAllMembers(){
-    return "test/test";
+    return "board/board";
   }
 
 

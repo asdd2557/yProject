@@ -1,3 +1,8 @@
-INSERT INTO article_e (title, content, author, created_at, updated_at) VALUES ('1', '1', 'user1', NOW(), NOW());
-INSERT INTO article_e (title, content, author, created_at, updated_at) VALUES ('2', '2', 'user2', NOW(), NOW());
-INSERT INTO article_e (title, content, author, created_at, updated_at) VALUES ('3', '3', 'user3', NOW(), NOW());
+CREATE TABLE IF NOT EXISTS article_e (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP NOT NULL,
+    updated_at TIMESTAMP NOT NULL
+);

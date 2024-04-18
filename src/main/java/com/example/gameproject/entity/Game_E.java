@@ -20,14 +20,17 @@ public class Game_E {
   private String user1;
   @Indexed
   private String user2;
-
-
+  @Indexed
+  private String turn;
+  @Indexed
+  private String time;
  public Game_A toArticle(Game_E gameE){
    Game_A gameA = new Game_A();
    gameA.setId(gameE.getId());
    gameA.setUser1(gameE.getUser1());
    gameA.setUser2(gameE.getUser2());
-
+   gameA.setTurn(gameA.getTurn());
+   gameA.setTime(gameA.getTime());
    return gameA;
  }
 

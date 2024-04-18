@@ -1,6 +1,5 @@
 package com.example.gameproject;
 
-import com.example.gameproject.service.DynamoStreamService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -21,13 +20,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@RequiredArgsConstructor
 @EnableMongoRepositories
 @EnableJpaAuditing // created_at, update_at 자동 없데이트
 @SpringBootApplication
 public class GameProjectApplication {
-
-
-
 
 
   @Value("${AWS_ACCESS_KEY_ID}")
@@ -36,12 +33,22 @@ public class GameProjectApplication {
   @Value("${AWS_SECRET_ACCESS_KEY}")
   private String awsSecretAccessKey;
 
+  @Value("${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_ID}")
+  private String spring_security_oauth2_client_google_id;
+
+  @Value("{SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_SECRET}")
+  private String  spring_security_oauth2_client_google_secret;
+
+  @Value("{JWT_SECRET_KEY}")
+  private String jwt_secret_ket;
+
+  @Value("{SPRING_DATA_MONGODB_URI}")
+  private String spring_data_mongodb_uri;
+
 
 
   public static void main(String[] args) {
-
     SpringApplication.run(GameProjectApplication.class, args);
-
   }
 
 

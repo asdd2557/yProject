@@ -11,6 +11,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "article")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Article_E {

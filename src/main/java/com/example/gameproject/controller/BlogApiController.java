@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -30,6 +31,13 @@ public class BlogApiController {
   public String getName(Principal principal) {
 
     return userDetailService.loadUserByUsername(principal.getName()).getNickname();
+  }
+  @GetMapping("/api/getemail")
+  public Map<String, String> getEmail(Principal principal){
+
+    Map<String, String> response = new HashMap<>();
+    response.put("email", principal.getName());  // 가정: principal.getName()이 이메일 주소를 반환
+    return response;
   }
 
   @GetMapping("/api/getrecord")

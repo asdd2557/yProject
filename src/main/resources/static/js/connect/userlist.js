@@ -1,52 +1,43 @@
-const eventSource1 = new EventSource("http://localhost:8080/connectview")
-eventSource1.onmessage=(event)=> {
+    var socket = new WebSocket("ws://godding-elastic-env-2.eba-mygzmyet.ap-northeast-2.elasticbeanstalk.com/home/ws");
 
-const data = JSON.parse(event.data);
+    socket.onopen = function() {
+        console.log("WebSocket connection established");
+    };
 
-fetchUserList();
-}
+    socket.onmessage = function(event) {
+        console.log("Message received: ", event.data); // 로그 추가
+        var jsonData = JSON.parse(event.data);
+        var dataDiv = document.getElementById("data");
+        renderUsers(jsonData);
+        document.dispatchEvent(new CustomEvent('socketMessage', { detail: jsonData }));
+    };
+
+    socket.onclose = function(event) {
+        console.log("WebSocket connection closed, code: ", event.code, "reason: ", event.reason);
+        console.log("Was the connection cleanly closed?: ", event.wasClean);
+    };
+
+    socket.onerror = function(error) {
+        console.log("WebSocket error: ", error);
+    };
 
 
-document.addEventListener("DOMContentLoaded", function() {
 
 
-    // 페이지 로드 시 사용자 목록을 가져와서 표시
-    fetchUserList();
-     setInterval(fetchUserList, 8000); //
-});
 
-   // 서버로부터 사용자 목록을 가져오는 함수
-    function fetchUserList() {
-        var xhr = new XMLHttpRequest();
 
-        // GET 방식으로 '/userlist' 엔드포인트에 요청
-        xhr.open('GET', '/userlist', true);
-
-        // 요청이 완료되었을 때 실행되는 콜백 함수
-        xhr.onload = function() {
-            if (xhr.status >= 200 && xhr.status < 400) {
-                // 서버에서 전달받은 JSON 데이터를 파싱
-                var userList = JSON.parse(xhr.responseText);
-
-                // 사용자 목록을 HTML에 추가
-                renderUsers(userList);
-            } else {
-                console.error('Failed to fetch user list');
-            }
-        };
-
-        // 요청 전송
-        xhr.send();
-    }
 
     // 사용자 목록을 HTML에 표시하는 함수
     function renderUsers(userList) {
+    console.log("rederUser in: " + userList)
         var accessList = document.querySelector('.access-list');
         var userElements = document.querySelectorAll('.user');
         userElements.forEach(function(element) {
             element.remove();
         });
         userList.forEach(function(user) {
+        console.log("user Log")
+        console.log(user.connect);
             var userDiv = document.createElement('div');
             userDiv.classList.add('user');
 

@@ -1,5 +1,44 @@
 var matchingfindinterval;
 
+ document.addEventListener('socketMessage', function(event) {
+
+ gamefind();
+
+     var jsonData = event.detail;
+
+
+       body = JSON.stringify({
+                   connect: "3"
+               })
+
+async function gameBaseChange(response) {
+    for (var userKey in jsonData) {
+        if (jsonData.hasOwnProperty(userKey)) {
+            if (jsonData[userKey].connect == "3" && jsonData[userKey].email == response.email) {
+      hideMatchingContainer();
+                                                 showBoardContainer();
+
+                            if (jsonData[userKey].position == "0") {
+
+                            }
+                if (jsonData[userKey].position == "1") {
+
+                }
+
+
+            }else if (jsonData[userKey].connect != "3" && jsonData[userKey].email == response.email) {
+             hideBoardContainer();
+             showMatchingContainer();
+            }
+        }
+    }
+}
+
+
+     function fail(){}
+          httpRequestStandbyGET("GET", "/api/getemail", body, gameBaseChange, fail)
+ });
+
 document.querySelector("#matchStartButton").addEventListener("click",() => {
    body = JSON.stringify({
               connect: "2"
@@ -34,9 +73,7 @@ clearInterval(matchingfindinterval);
 
 
 function gamefind(){
-  body = JSON.stringify({
-              find: "1"
-          })
+
 function success(data){
 if(data == null){
 return;
@@ -48,14 +85,15 @@ return;
           function fail(){};
       connectUpdate(body,success1,fail);
 }
-function fail(){
-}
+
+function fail(){}
+
      httpRequestStandbyGET("GET", "/api/gamefind", body, success, fail)
 }
 
 
 function matchingfind(){
-    gamefind();
+
 
   body = JSON.stringify({
               find: "1"
@@ -74,11 +112,8 @@ body = JSON.stringify({
                connect: "3"
            })
 
-function success(){
-}
-function fail(){
-
-}
+function success(){}
+function fail(){}
 
 connectUpdate(body,success,fail);
 
@@ -97,29 +132,52 @@ const body1 = {
     }
 };
 
-
  httpRequestStandby("POST", "/api/firstgamesave", JSON.stringify(body1), success, fail)
 }
 
-function fail(){
+function fail(){}
 
-}
     httpRequestStandbyGET("GET", "/api/matchingfind", body, matchingfindsuccess, fail)
 }
 
 
 
+
+
+    function showMatchingContainer() {
+        document.getElementById('matchingContainer').style.display = 'block';
+    }
+
+    function showBoardContainer() {
+            document.getElementById('boardContainer').style.display = 'block';
+    }
+
+    function hideMatchingContainer() {
+        document.getElementById('matchingContainer').style.display = 'none';
+    }
+
+    function hideBoardContainer() {
+            document.getElementById('boardContainer').style.display = 'none';
+    }
+
+
+
+
+
 function showLoader(){
+console.log("showLoader")
        document.getElementById("loader").style.display = "block";
         document.getElementById("matchStartButton").style.display = "none";
         document.getElementById("matchCancel").style.display = "block";
 }
 
 function hideLoader() {
+console.log("hideLoader")
   document.getElementById("loader").style.display = "none";
   document.getElementById("matchStartButton").style.display = "block";
          document.getElementById("matchCancel").style.display = "none";
 }
+
 
 
 
