@@ -1,7 +1,9 @@
 package com.example.gameproject.config.oauth;
 
 
+import com.example.gameproject.entity.User_E;
 import com.example.gameproject.until.CookieUtil;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.security.oauth2.client.web.AuthorizationRequestRepository;
 import org.springframework.security.oauth2.core.endpoint.OAuth2AuthorizationRequest;
 import org.springframework.web.util.WebUtils;
@@ -9,7 +11,7 @@ import org.springframework.web.util.WebUtils;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import java.io.IOException;
 
 
 public class OAuth2AuthorizationRequestBasedOnCookieRepository implements AuthorizationRequestRepository<OAuth2AuthorizationRequest> {
@@ -36,6 +38,7 @@ public class OAuth2AuthorizationRequestBasedOnCookieRepository implements Author
       removeAuthorizationRequestCookies(request, response);
       return;
     }
+
 
     CookieUtil.addCookie(response, OAUTH2_AUTHORIZATION_REQUEST_COOKIE_NAME, CookieUtil.serialize(authorizationRequest), COOKIE_EXPIRE_SECONDS);
   }

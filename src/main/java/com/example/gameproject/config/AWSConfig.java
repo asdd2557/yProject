@@ -12,6 +12,7 @@ import software.amazon.awssdk.auth.credentials.EnvironmentVariableCredentialsPro
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
+import software.amazon.awssdk.services.dynamodb.streams.DynamoDbStreamsClient;
 
 @Configuration
 @Slf4j
@@ -35,4 +36,8 @@ public class AWSConfig {
   public DynamoDbEnhancedClient dynamoDbEnhancedClient(DynamoDbClient dynamoDbClient) {
     return DynamoDbEnhancedClient.builder().dynamoDbClient(dynamoDbClient).build();
   }
+
+
+
+
 }

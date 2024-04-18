@@ -1,0 +1,12 @@
+
+
+
+.button-container {
+    place-container: center;
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+}
+
+#standbycontainer {
+    place-content: center;
+}

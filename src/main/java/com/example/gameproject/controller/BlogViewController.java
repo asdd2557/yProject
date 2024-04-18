@@ -3,7 +3,9 @@ package com.example.gameproject.controller;
 import com.example.gameproject.dto.ArticleListView_A;
 import com.example.gameproject.dto.Article_A;
 import com.example.gameproject.entity.Article_E;
+import com.example.gameproject.entity.Connect_E;
 import com.example.gameproject.service.BlogService;
+import com.example.gameproject.service.ConnectService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,8 @@ import java.util.List;
 @Controller
 public class BlogViewController {
   private final BlogService blogService;
+  private final ConnectService connectService;
+
 
   @GetMapping("/articles")
   public String getArticle(Model model){

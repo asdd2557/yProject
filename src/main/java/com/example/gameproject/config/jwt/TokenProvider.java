@@ -27,7 +27,9 @@ public class TokenProvider {
   }
 
   //JWT 토큰 생성 메서드
+  //페이로드?
   private String makeToken(Date expiry, User_E user_e) {
+    System.out.println("토큰이 만들어집니다.");
     Date now = new Date();
     return Jwts.builder()
         .setHeaderParam(Header.TYPE, Header.JWT_TYPE) //헤더 typ : JWT
@@ -56,10 +58,15 @@ public class TokenProvider {
   }
 
   //토큰 기반으로 인증 정보를 가져오는 메서드
+  //authentication 객체가 session영역에 저장을 해야하고 그방법이 return해주면 됨.
+  //애는 권한 있는곳에서만 작동
+  //굳이 JWT토큰을 사용하면서 세션을 만들 이유가 없음. 근데 단지 권한 처리 때문에 sesstion넣어줌
+  // 리턴의 이유는 권한 관리를 security가 대신 해주기 때문에 편하려고 하는거임.
     public Authentication getAuthentication(String token){
+
       Claims claims = getClaims(token);
       Set<SimpleGrantedAuthority> authorities = Collections.singleton(new SimpleGrantedAuthority("ROLE_USER"));
-
+    //JWT토큰 서명을 통해서 서명이 정상이면 Authentication객체를 만들어준다.
       return  new UsernamePasswordAuthenticationToken(new org.springframework.security.core.userdetails.User(claims.getSubject(), "", authorities), token, authorities);
     }
 

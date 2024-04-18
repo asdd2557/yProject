@@ -13,8 +13,9 @@ public class User_A
   private String email;
   private String password;
   private String nickname;
-
-
+  private String connect;
+  private int defeat;
+  private int victory;
 
   
 

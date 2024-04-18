@@ -1,4 +1,15 @@
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: ture
+      force: true
+
 spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://asdd2t557:4AeWZdViQIeDKW0G@game.2iqyfyo.mongodb.net/game?retryWrites=true&w=majority&appName=Game
+
   jpa:
     show-sql: true
     properties:
@@ -14,10 +25,10 @@ spring:
       client:
         registration:
           google:
-            client-id: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_ID}
-            client-secret: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_SECRET}
+            client-id: 354113929348-3v4ct8ntdq32lj785f7fiu25qk3ccf9t.apps.googleusercontent.com
+            client-secret: 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
             scope:
-              - emaila
+              - email
               - profile
 jwt:
   secret_key: ${JWT_SECRET_KEY}

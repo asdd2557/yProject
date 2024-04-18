@@ -1,0 +1,40 @@
+
+/* 매칭 시작 버튼 컨테이너 스타일링 */
+.button-container {
+    margin-right: 20px; /* 채팅 창과의 간격 */
+}
+
+/* 채팅 창 컨테이너 스타일링 */
+.chat-container {
+    flex-grow: 1; /* 남은 공간을 모두 차지하도록 함 */
+}
+
+/* 채팅 내용 스타일링 */
+#chatContent {
+    overflow-y: scroll; /* 채팅 내용이 넘칠 경우 스크롤 표시 */
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+/* 채팅 입력 폼 스타일링 */
+#chatForm {
+    display: flex;
+}
+
+#chatInput {
+    flex-grow: 1; /* 입력 필드가 가능한 최대 너비 차지 */
+    margin-right: 10px;
+}
+
+#chatInput, button {
+    padding: 8px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor
+}

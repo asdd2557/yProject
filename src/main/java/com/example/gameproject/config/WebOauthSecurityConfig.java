@@ -48,34 +48,35 @@ public WebSecurityCustomizer configure(){
 
  @Bean
  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-  //토큰 방식으로 인증을 하기 때문에 기존에 사용하던 폼 로그인, 세션 비활성화
+  //토큰 방식으로 인증을 하기 때문에 기존에 사용하던 폼 로그인, 세션 비활성화 bearer방식을 쓸거기 때문에 아래 있는것들 disable해야함
   http.csrf().disable()
-      .httpBasic().disable()
-      .formLogin().disable()
+      .httpBasic().disable() //Basic안씀,
+      .formLogin().disable() //폼로그인 안함
       .logout().disable();
 
   http.sessionManagement()
-      .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+      .sessionCreationPolicy(SessionCreationPolicy.STATELESS);//세션 사용 안함
 
-  http.addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
-
+  http.addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class); //그냥 필터 넣으면 안됨 이후, 전으로 넣어야함
+//UsernamePasswordAuthenticationFilter는 login요청해서 username, password 전송하함(post) 그런데 formLogin.disable해서 비활성화 되어서 따로 위에 명시해줌
+// UsernamePasswordAuthenticationFilter는 login요청해서 username, password 전송하면(post) 동작함
 
   http.authorizeRequests()
       .antMatchers("/api/token").permitAll()
-      .antMatchers("/api/**").authenticated()
+      .antMatchers("/api/**").authenticated()//인증이 필요함
+      .antMatchers("/mong_save").authenticated()//인증이 필요함
       .anyRequest().permitAll();
 
 
   http.oauth2Login()
       .loginPage("/login")
-      .authorizationEndpoint()
+      .authorizationEndpoint()//구글 로그인이 완료된 뒤의 후처리가 필요함(엑세스토큰+사용자프로필정보)를 리턴해줌
       // Authorization 요청과 관련된 상태 저장
       .authorizationRequestRepository(oAuth2AuthorizationRequestBasedOnCookieRepository())
       .and()
       .successHandler(oAuth2SuccessHandler()) //인증 성공 시 실행할 핸들러
       .userInfoEndpoint()
       .userService(oAuth2UserCustomService);
-
   http.logout()
       .logoutSuccessUrl("/login");
 
@@ -83,6 +84,7 @@ public WebSecurityCustomizer configure(){
   http.exceptionHandling()
       .defaultAuthenticationEntryPointFor(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED),
           new AntPathRequestMatcher("/api/**"));
+
   return http.build();
  }
 

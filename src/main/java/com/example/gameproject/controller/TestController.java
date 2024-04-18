@@ -15,18 +15,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @Slf4j //로깅을 위한 거(어노테이션) 로깅 : 뭐든 기록하는거
 @RequiredArgsConstructor
 public class TestController {
 
-  private  final TestService testService;
-  private  final BlogService blogService;
 
   @GetMapping("/test")
-  public List<Member_E> getAllMembers(){
-    List<Member_E> memberEs = testService.getAllMembers();
-    return memberEs;
+  public String getAllMembers(){
+    return "test/test";
   }
 
 

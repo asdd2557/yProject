@@ -1,5 +1,6 @@
 import org.gradle.internal.impldep.org.bouncycastle.asn1.iana.IANAObjectIdentifiers.mail
 import org.gradle.internal.impldep.org.bouncycastle.asn1.iana.IANAObjectIdentifiers.security
+import org.gradle.internal.impldep.org.bouncycastle.asn1.x500.style.RFC4519Style.o
 
 plugins {
 	java
@@ -50,6 +51,10 @@ dependencies { //라이브러리 넣는곳
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	//start test
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	//Mongo DB
+	implementation ("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
+
+
 
 }
 

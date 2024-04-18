@@ -41,7 +41,7 @@ public class BlogService {
     Article_E article_e = blogRepository.findById(id)
         .orElseThrow(() -> new IllegalArgumentException("not found: " +id));
 
-    authorizeArticleAuthor(article_e);
+     authorizeArticleAuthor(article_e);
     article_e.update(article_a.getTitle(), article_a.getContent());
 
     return article_e;
@@ -54,7 +54,5 @@ public class BlogService {
     if(!article_e.getAuthor().equals(userName)){
       throw new IllegalArgumentException("not authorized");
     }
-
   }
-
 }

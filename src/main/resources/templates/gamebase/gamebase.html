@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="/css/dialog.css">
+    <link rel="stylesheet" href="/css/standby.css">
+
+</head>
+<div class="container" style="height: 100%; display: inline">
+    <div class="row" style="height: 100%; margin-top: 55px;height: 100%;">
+        <div class="col-md-6 col-lg-8" id="standbycontainer" style="margin-left: 50px; border: 1px solid #ccc; background-color: antiquewhite;">
+            <div th:include="sub/standby :: div"></div>
+        </div>
+        <div class="col-md-2 col-lg-2" style=" place-content: flex-end;height: 100%;">
+            <div style="height: 100%"  th:include="sub/dialog :: div"></div>
+        </div>
+        <div class="col-md-2 col-lg-1" style=" place-content: flex-end;height: 100%;">
+            <div style="height: 100%"  th:include="sub/userlist"></div>
+        </div>
+    </div>
+</div>
+<!-- 부트스트랩 자바스크립트 및 의존성 로드 -->
+</html>

@@ -17,6 +17,7 @@ public class DynamoUserRepository {
 
   private final DynamoDbTable<User_E> userDynamoDbTable;
 
+
   public DynamoUserRepository(DynamoDbEnhancedClient dynamoDbEnhancedClient) {
 
     this.userDynamoDbTable = dynamoDbEnhancedClient.table("Account", TableSchema.fromBean(User_E.class));
@@ -26,6 +27,8 @@ public class DynamoUserRepository {
     userDynamoDbTable.putItem(userE);
     return userE;
   }
+
+
 
   public User_A save(User_A userA) {
     userDynamoDbTable.putItem(User_E.getUser_E(userA));
@@ -39,6 +42,25 @@ public class DynamoUserRepository {
   public User_E findByEmail(String email) {
     DynamoDbIndex<User_E> index = userDynamoDbTable.index("email-index");
     QueryConditional queryConditional = QueryConditional.keyEqualTo(Key.builder().partitionValue(email).build());
+
+
+    SdkIterable<Page<User_E>> queryResult = index.query(QueryEnhancedRequest.builder()
+        .queryConditional(queryConditional)
+        .limit(10)
+        .build());
+
+    for (Page<User_E> page : queryResult) {
+      for (User_E user : page.items()) {
+        return user; // 첫 번째 항목 반환
+      }
+    }
+
+    return null; // 검색 결과가 없을 경우
+  }
+
+  public User_E findBySubNickname(String subnickname) {
+    DynamoDbIndex<User_E> index = userDynamoDbTable.index("subnickname-index");
+    QueryConditional queryConditional = QueryConditional.keyEqualTo(Key.builder().partitionValue(subnickname).build());
 
 
     SdkIterable<Page<User_E>> queryResult = index.query(QueryEnhancedRequest.builder()
