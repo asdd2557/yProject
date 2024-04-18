@@ -8,7 +8,7 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://asdd2t557:4AeWZdViQIeDKW0G@game.2iqyfyo.mongodb.net/game?retryWrites=true&w=majority&appName=Game
+      uri:
 
   jpa:
     show-sql: true
@@ -25,8 +25,8 @@ spring:
       client:
         registration:
           google:
-            client-id: 354113929348-3v4ct8ntdq32lj785f7fiu25qk3ccf9t.apps.googleusercontent.com
-            client-secret: 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
+            client-id:
+            client-secret:
             scope:
               - email
               - profile
