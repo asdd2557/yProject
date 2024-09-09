@@ -4,83 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8115cda0-f993-49f9-bdd1-01d5d5f46fca" name="변경" comment="stream test backup">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/JsonConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/ThreadPoolConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/mongodb/MongoDBConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/websocket/AuthHandshakeInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/websocket/CustomHandshakeInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/websocket/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/websocket/WebSocketSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/MongoDBStreamController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/exception/GameNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/service/BoardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/connect/socket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/GameProjectApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/GameProjectApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/config/TokenAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/config/TokenAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/config/WebOauthSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/config/WebOauthSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/config/jwt/TokenProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/config/jwt/TokenProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/config/oauth/OAuth2SuccessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/config/oauth/OAuth2SuccessHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/config/oauth/OAuth2UserCustomService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/config/oauth/OAuth2UserCustomService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/controller/BlogApiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/controller/BlogApiController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/service/UserDetailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/service/UserDetailService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/token.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/token.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/GameProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/GameProjectApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/TokenAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/TokenAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/WebOauthSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/WebOauthSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/WebSocketConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/jwt/TokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/jwt/TokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/oauth/OAuth2SuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/oauth/OAuth2SuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/oauth/OAuth2UserCustomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/oauth/OAuth2UserCustomService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/BlogApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/BlogApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/ChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/ConnectApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/ConnectApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/ConnectViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/ConnectViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/DynamoDBStreamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/DynamoDBStreamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/MatchingApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/MatchingApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/dto/Connect_A.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/dto/Connect_A.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/dto/Game_A.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/dto/Game_A.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/entity/Connect_E.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/entity/Connect_E.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/entity/Game_E.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/entity/Game_E.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/handler/WebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/handler/WebSocketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/repository/DynamoConnectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/repository/DynamoConnectRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/repository/MongDBGameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/repository/MongDBGameRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/service/ChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/service/ChatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/service/ConnectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/service/ConnectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/service/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/service/UserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/service/UserDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/board.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/board.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/connect/update.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/connect/update.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/connect/userlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/connect/userlist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/dialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/standby.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/standby.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/token.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/token.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/board/board.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/board/board.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/gamebase/gamebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/gamebase/gamebase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sub/standby.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/sub/standby.html" afterDir="false" />
-    </list>
+    <list default="true" id="8115cda0-f993-49f9-bdd1-01d5d5f46fca" name="변경" comment="stream test backup" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -173,7 +97,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main 병합 중",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/82108/Desktop/intelij/yproject/yproject/GameProject",
     "onboarding.tips.debug.path": "C:/Users/82108/Desktop/intelij/yproject/GameProject/src/main/java/org/example/Main.java",
