@@ -29,7 +29,7 @@ public class TokenProvider {
   //JWT 토큰 생성 메서드
   //페이로드?
   private String makeToken(Date expiry, User_E user_e) {
-    System.out.println("토큰이 만들어집니다.");
+
     Date now = new Date();
     return Jwts.builder()
         .setHeaderParam(Header.TYPE, Header.JWT_TYPE) //헤더 typ : JWT
@@ -75,6 +75,11 @@ public class TokenProvider {
       Claims claims = getClaims(token);
       return claims.get("id",String.class);
     }
+
+  public String getUsernameFromToken(String token) {
+    Claims claims = getClaims(token);
+    return claims.getSubject();
+  }
 
     private Claims getClaims(String token){
       return Jwts.parser()// 클래임 조회

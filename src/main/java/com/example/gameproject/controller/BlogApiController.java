@@ -34,7 +34,6 @@ public class BlogApiController {
   }
   @GetMapping("/api/getemail")
   public Map<String, String> getEmail(Principal principal){
-
     Map<String, String> response = new HashMap<>();
     response.put("email", principal.getName());  // 가정: principal.getName()이 이메일 주소를 반환
     return response;
@@ -54,7 +53,6 @@ public class BlogApiController {
   public String getSubNameBySubNickname(@RequestBody Map<String, String> requestBody) {
     String subnickname = requestBody.get("subnickname");
     try {
-      System.out.println("userDetailService.loadUserBySubNickname(subnickname) :"+userDetailService.loadUserBySubNickname(subnickname).getSubnickname());
       return userDetailService.loadUserBySubNickname(subnickname).getSubnickname();
     }catch (Exception e){
       return null;
@@ -64,11 +62,9 @@ public class BlogApiController {
   @GetMapping("/api/getsubnamebyname")
   public String getSubNameByName(Principal principal) {
     try {
-      System.out.println("getSubNameByName: "+userDetailService.loadUserByUsername(principal.getName()).getSubnickname());
       return userDetailService.loadUserByUsername(principal.getName()).getSubnickname();
 
     }catch (Exception e){
-      System.out.println("null!!");
       return null;
     }
   }
@@ -78,12 +74,9 @@ public class BlogApiController {
   public String UpdateSubNickName(@RequestBody Map<String, String> requestBody, Principal principal) {
     try {
       String subnickname = requestBody.get("subnickname");
-      System.out.println("Principal:" + principal.getName());
-      System.out.println("subnickname!!:" + subnickname);
       userDetailService.updateBySubNickname(userDetailService.loadUserByUsername(principal.getName()),subnickname);
       return subnickname;
     }catch (Exception e){
-      System.out.println("update 안됨!");
       return null;
     }
   }
@@ -101,7 +94,6 @@ public class BlogApiController {
 
   @PostMapping("/api/articles")
   public ResponseEntity<Article_E> addArticle(@RequestBody Article_A article_a, Principal principal) {
-    System.out.println(principal);
     Article_E article_e = blogService.save(article_a, principal.getName());
 
     return ResponseEntity.status(HttpStatus.CREATED)

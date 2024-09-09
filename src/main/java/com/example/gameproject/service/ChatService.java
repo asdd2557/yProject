@@ -20,7 +20,7 @@ public class ChatService {
 
 
 
-  public Mono<Chat_E> createChat(Chat_E chatE) {
+  public Mono<Chat_E> saveChat(Chat_E chatE) {
     return mongoDBRepository.save(chatE);
   }
 

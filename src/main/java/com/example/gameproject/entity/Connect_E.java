@@ -20,6 +20,7 @@ public class Connect_E {
     private String email;
     private String position;
     private int matching;
+    private String socket;
   @DynamoDbPartitionKey
   @DynamoDbAttribute("email")
   public String getEmail(){
@@ -43,12 +44,16 @@ public class Connect_E {
     return matching;
   }
 
+  @DynamoDbAttribute("socket")
+  public String getSocket(){return socket;}
+
   public Connect_A toArticle(Connect_E connectE){
     Connect_A connectA = new Connect_A();
     connectA.setConnect(connectE.getConnect());
     connectA.setEmail(connectE.getEmail());
     connectA.setPosition(connectE.getPosition());
     connectA.setMatching(connectE.getMatching());
+    connectA.setSocket(connectE.getSocket());
     return connectA;
   }
 

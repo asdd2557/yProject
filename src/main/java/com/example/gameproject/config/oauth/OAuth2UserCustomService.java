@@ -30,9 +30,9 @@ public class OAuth2UserCustomService extends DefaultOAuth2UserService { //google
     //System.out.println(super.loadUser(userRequest).getAttributes());//이 정보만 필요함 id number, 이름 , 사진, email
     //구글 로그인 버튼 클릭 -> 구글로그인창 -> 로그인을 완료 -> code를 리턴(Oauth-Client라이브러리가) -> AccessToken요청
     //userRequest받음 -> 회원 프로필 받아야함(loadUser함수) -> 회원 프로필 정보 받음 구글로 부터
-    System.out.println("loadUser!!");
+
     OAuth2User user = super.loadUser(userRequest); //loadUser를 통해 사용자 정보를 조회함
-    System.out.println("user:"+user);
+
     saveOrUpdate(user); // user테이블에 사용자 정보가 없다면 saveOrUpdate()메서드를 실행해 users 테이블에 회원 데이터를 추가합니다.
     return user;
   }

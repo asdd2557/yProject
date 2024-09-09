@@ -20,7 +20,7 @@ public class UserDetailService implements UserDetailsService {
   //url/login으로 신호가 올때 자동 동작함
   //세션에 담음(권한 관리를 위해)
   public User_E loadUserByUsername(String email) {
-    System.out.println("loaduserbyUsername");
+
     User_E userE = dynamoUserRepository.findByEmail(email);
     if (userE == null) {
       throw new IllegalArgumentException("User not found with email: " + email);
@@ -37,9 +37,13 @@ public class UserDetailService implements UserDetailsService {
   }
 
   public User_E updateBySubNickname(User_E userE, String subnickname) {
-    System.out.println("subnickname!! :" +subnickname);
     userE.update(subnickname);
-    System.out.println("updateBySubNickname:" +userE.getSubnickname());
+
+    return dynamoUserRepository.update(userE);
+  }
+
+  public User_E update(User_E userE){
+
     return dynamoUserRepository.update(userE);
   }
 

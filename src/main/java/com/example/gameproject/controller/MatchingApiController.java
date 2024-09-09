@@ -20,12 +20,9 @@ public class MatchingApiController {
 
   @PutMapping("/api/matching")
   public void matchingStart(@RequestBody Map<String, String> requestBody,Principal principal) {
-    System.out.println("matchingStart!!");
-      String connect = requestBody.get("connect");
+    String connect = requestBody.get("connect");
     Connect_E connectE =  connectService.loadByEmail(principal.getName());
     connectE.setConnect("2");
     connectService.updateConnect(connectE);
   }
-
-
 }

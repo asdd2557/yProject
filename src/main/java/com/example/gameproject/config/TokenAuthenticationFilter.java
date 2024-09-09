@@ -29,14 +29,12 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
       HttpServletRequest request,
       HttpServletResponse response,
       FilterChain filterChain) throws ServletException, IOException {
-    System.out.println("doFilterInternal_on!");
     // 요청 헤더의 Authorization 키의 값 조회
     String authorizationHeader = request.getHeader(HEADER_AUTHORIZATION); //hearer가져옴
     // 가져온 값에서 접두사 제거 접두사 Bearer 제거 만약 값이 Null이거나 Bearer로 시작하지 않으면 null을 반환함
     String token = getAccessToken(authorizationHeader);
 
-    System.out.println("authorizationHeader!:"+authorizationHeader);
-    System.out.println("token!:"+token);
+
     //가져온 토큰이 유효한지 확인하고, 유효한 때는 인증 정보 설정
     if (tokenProvider.validToken(token)) { //토큰이 유효시 True 그렇지 않으면 False
       Authentication authentication = tokenProvider.getAuthentication(token); //메서드를 사용해 인증 정보를 가져오면 유저 객체가 반환됩니다. 유저 객체에는 유저 이름 , 권한 목록 과 같은 인증 정보가 포함됩니다.

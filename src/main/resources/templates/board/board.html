@@ -1,6 +1,25 @@
 <div>
 
+
     <style>
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .player-info {
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            margin-bottom: 10px;
+        }
+
+        .player-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
         .board {
             display: grid;
             caret-color: transparent;
@@ -16,7 +35,7 @@
         .intersection {
             position: relative;
             border: 1px solid transparent;
-            cursor: pointer; /* 클릭 가능한 요소에 커서 스타일 설정 */
+            cursor: pointer;
         }
 
         .intersection::before,
@@ -53,7 +72,8 @@
             transform: translate(-50%, -50%);
             z-index: 1;
         }
-          .preview-piece  {
+
+        .preview-piece {
             width: 100%;
             height: 100%;
             border-radius: 50%;
@@ -64,18 +84,70 @@
             transform: translate(-50%, -50%);
             z-index: 1;
         }
+
+
+        .time-loop-bar {
+    width: 600px;
+    height: 20px;
+    background-color: #ddd;
+    margin-top: 20px;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 100%;
+    background-color: green;
+    transition: width 0.1s linear;
+}
+
+        /* 쌍삼을 표현할 아이콘 스타일 */
+.pair-three-icon {
+    position: absolute;
+    width: 100%; /* 부모 요소의 크기에 맞춰 조정 */
+    height: 100%; /* 부모 요소의 크기에 맞춰 조정 */
+    border: 1px solid red; /* 원형 테두리 색상, 두께를 상대적으로 조정 */
+    border-radius: 50%; /* 원형 모양으로 만들기 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* 필요한 경우 z-index 조정 */
+}
+
+.cross-line {
+    position: absolute;
+    width: 100%;
+    height: 1px; /* 교차선의 두께를 줄임 */
+    background-color: red; /* 교차선 색상 */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cross-line-rotate {
+    transform: translateY(-50%) rotate(45deg); /* 대각선 교차선 */
+}
     </style>
+    <div class="game-container">
+        <div class="player-info">
+            <div id="player1-name" class="player-name">플레이어 1: <span id="player1-nickname">로딩 중...</span></div>
+            <div id="player2-name" class="player-name">플레이어 2: <span id="player2-nickname">로딩 중...</span></div>
+        </div>
+        <div class="board">
+            <!-- 19x19 오목판 생성 -->
+            <!-- 각 교차점을 나타내는 div 요소들 -->
+            <!-- 각 요소에는 row-index와 col-index를 부여하여 위치 식별 -->
+            <!-- 예를 들어, 첫 번째 교차점은 id="intersection-0-0" -->
+
+            <!-- JavaScript로 생성 -->
+        </div>
+        <div class="time-loop-bar">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+    </div>
 
 
-<div class="board">
-    <!-- 19x19 오목판 생성 -->
-    <!-- 각 교차점을 나타내는 div 요소들 -->
-    <!-- 각 요소에는 row-index와 col-index를 부여하여 위치 식별 -->
-    <!-- 예를 들어, 첫 번째 교차점은 id="intersection-0-0" -->
 
-    <!-- JavaScript로 생성 -->
-</div>
-
-
-    <script src="/js/board.js"></script>
 </div>

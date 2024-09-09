@@ -18,7 +18,9 @@ public class Game_A {
   private String user2;
   private String turn;
   private String time;
-  private List<List<Integer>> table1;
+
+  private String[][] table;
+  private List<String[][]> tableLog;
 
 public Game_E toEntity(Game_A gameA){
   Game_E gameE = new Game_E();
@@ -27,6 +29,8 @@ public Game_E toEntity(Game_A gameA){
   gameE.setUser2(gameA.getUser2());
   gameE.setTurn(gameA.getTurn());
   gameE.setTurn(gameA.getTime());
+  gameE.setTable(gameA.getTable());
+  gameE.setTableLog(gameA.getTableLog());
   return gameE;
 }
 

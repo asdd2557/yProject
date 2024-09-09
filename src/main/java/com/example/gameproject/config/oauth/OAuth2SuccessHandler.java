@@ -41,7 +41,8 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
   //최초 로그인 할시 실행됨
   @Override
   public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
-    System.out.println("onAuthenticationSuccess!!");
+
+
     OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
 
     //picture
@@ -53,13 +54,23 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
 
     saveRefreshToken(user_e.getId(), refreshToken);
     addRefreshTokenToCookie(request, response, refreshToken);
-    // 액세스 토큰 생성 -> 패스에 액세스 토큰 추가
+
+    // 1. 세션 생성 및 principal 값 저장 (리다이렉트 전에 수행)
+    HttpSession session = request.getSession();
+    session.setAttribute("principal", user_e);
+
+    // 2. 액세스 토큰 생성 -> 패스에 액세스 토큰 추가
     String accessToken = tokenProvider.generateToken(user_e, ACCESS_TOKEN_DURATION);
+    System.out.println("onAuthenticationSuccess User Name: " + user_e.getNickname());
+    System.out.println("onAuthenticationSuccess AccessToken: " + accessToken);
     String targetUrl = getTargetUrl(accessToken);
-    // 인증 관련 설정값, 쿠키 제거
+    // 3. 인증 관련 설정값, 쿠키 제거
     clearAuthenticationAttributes(request, response);
-    // 리다이렉트
+    System.out.println("onAuthenticationSuccess: "+ accessToken);
+    // 4. 리다이렉트
     getRedirectStrategy().sendRedirect(request, response, targetUrl);
+
+
   }
 
   //생성된 리프레시 토큰을 전달받아 데이터 베이스에 저장
@@ -70,7 +81,8 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
           dynamoRefreshTokenRepository.update(refreshToken);
         }else{
            refreshToken = new RefreshToken(userId, newRefreshToken);
-
+          System.out.println("onAuthenticationSuccess User: " + userId);
+          System.out.println("onAuthenticationSuccess refreshToken: " + refreshToken.getRefreshToken());
           dynamoRefreshTokenRepository.save(refreshToken);
         }
   }

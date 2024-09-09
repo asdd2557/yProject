@@ -1,31 +1,57 @@
 package com.example.gameproject.handler;
 
+import com.example.gameproject.entity.Connect_E;
+import com.example.gameproject.service.ConnectService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
-import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
-
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
+@RequiredArgsConstructor
 public class WebSocketHandler extends TextWebSocketHandler {
-  private List<WebSocketSession> sessions = new ArrayList<>();
 
-
-
+  private final ConnectService connectService;
+  private Map<String, WebSocketSession> socketMap = new HashMap<>();
+  private final List<WebSocketSession> sessions = new CopyOnWriteArrayList<>();
 
   @Override
   public void afterConnectionEstablished(WebSocketSession session) throws Exception {
-    System.out.println("afterConnectionEstablished! Session ID: " + session.getId());
+    // Principal 대신에 attributes에서 username 가져오기
+    String username = (String) session.getAttributes().get("username");
+    System.out.println("afterConnectionEstablished: username: " + username);
+       Connect_E connectE = connectService.loadByEmail(username);
+
+    if (connectE == null) {
+      connectE = new Connect_E();
+      connectE.setConnect("1");
+      connectE.setMatching(0);
+      connectE.setEmail(username);
+      connectE.setSocket(session.getId());
+      connectService.save(connectE);
+    } else {
+      connectE.setConnect("1");
+      connectE.setMatching(0);
+      connectE.setSocket(session.getId());
+      connectService.updateConnect(connectE);
+    }
+
     sessions.add(session);
-    System.out.println("Session added. Total sessions: " + sessions.size());
+    socketMap.put(session.getId(), session);
+    System.out.println("WebSocket connection Open. Session ID: " + session.getId() + " // Username: " + username);
+  }
+
+  public boolean connectCheckByPrincipal(String principal) {
+    return connectService.loadByEmail(principal) != null;
   }
 
   @Override
   public void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
-    System.out.println("Message received: " + message.getPayload());
+    System.out.println(message.getPayload());
     for (WebSocketSession s : sessions) {
       s.sendMessage(message);
     }
@@ -33,30 +59,37 @@ public class WebSocketHandler extends TextWebSocketHandler {
 
   @Override
   public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
-    System.out.println("WebSocket connection closed. Session ID: " + session.getId());
-    System.out.println("Close status: " + status);
+    String username = (String) session.getAttributes().get("username");
+    System.out.println("Session Closed: " + session.getId() + " // Username: " + username);
     sessions.remove(session);
-    System.out.println("Session removed. Total sessions: " + sessions.size());
+    socketMap.remove(session.getId());
   }
 
   @Override
   public void handleTransportError(WebSocketSession session, Throwable exception) throws Exception {
-    System.err.println("WebSocket error. Session ID: " + session.getId());
-    exception.printStackTrace();
+    String username = (String) session.getAttributes().get("username");
+    System.out.println("Session Error ID: " + session.getId() + " // Username: " + username);
   }
 
-
   public void sendMessageToAll(String message) {
-    System.out.println("in sendMessageToAll");
     for (WebSocketSession session : sessions) {
       try {
-        System.out.println("Before Message sent: " + message + " to session: " + session.getId());
         session.sendMessage(new TextMessage(message));
-        System.out.println("Message sent: " + message + " to session: " + session.getId());
-      } catch (Exception e) {
-        e.printStackTrace();
-        System.out.println("Not Message send to session: " + session.getId());
+      } catch (Exception ignored) {
       }
+    }
+  }
+
+  public void sendMessageToTarget(String message, String target) {
+    WebSocketSession session = socketMap.get(target);
+    if (session != null) {
+      try {
+        session.sendMessage(new TextMessage(message));
+      } catch (Exception e) {
+        System.out.println(e.getMessage());
+      }
+    } else {
+      System.out.println("No session found for target: " + target);
     }
   }
 }

@@ -2,6 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     onPageEnter();
+gamefind();
+
 });
 
 function onPageEnter() {
@@ -12,7 +14,7 @@ function onPageEnter() {
     // URL 패턴 확인
   if (pattern.test(currentURL)) {
    body = JSON.stringify({
-              connect: "1"
+              connect: "2"
           })
          function success() {
          // 채팅 내용을 표시할 div 요소 선택
@@ -31,32 +33,30 @@ function onPageEnter() {
 
                  // 새로운 메시지를 생성하고 텍스트 내용 설정
                  const newMessageElement = document.createElement("p");
-                 newMessageElement.textContent = "admin: login이 필요합니다.";
+                 newMessageElement.textContent = "login이 필요합니다.";
 
                  // 새로운 메시지를 채팅 영역에 추가
                  chatContentDiv.appendChild(newMessageElement);
 
                 };
-httpRequest3('PUT','/api/connectupdateorsave',body, success, fail);
+httpRequest3('POST','/api/checkLogin',body, success, fail);
     }
 }
 
 // 페이지 떠날 때 실행할 함수
 function onPageLeave() {
-   alert("나갔다.");
    body = JSON.stringify({
               connect: "0"
           })
                    function success() {
-                          alert("나갔다.");
-                          console.log("안녕히가세요.");
+
                           }
                           function fail(){
                           console.log("Error");
                           }
     // 페이지를 떠날 때 실행할 액션 추가
     console.log("페이지를 떠났습니다!");
-    httpRequest3('PUT','/api/connectupdateorsave',body, success, fail);
+    httpRequest3('PUT','/api/connectUpdate',body, success, fail);
     // 원하는 액션을 실행합니다.
 }
 

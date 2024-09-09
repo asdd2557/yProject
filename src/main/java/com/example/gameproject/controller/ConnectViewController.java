@@ -11,8 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Schedulers;
 
@@ -31,7 +30,7 @@ public class ConnectViewController {
   @Async
   @GetMapping("/userlist")
   public List<Map<String, String>> getUserListAsync() {
-    // 1초 대기
+
     try {
       TimeUnit.SECONDS.sleep(1);
     } catch (InterruptedException e) {
@@ -49,12 +48,10 @@ public class ConnectViewController {
     for (Connect_E connectE : connectEs) {
       User_E user_e = userDetailService.loadUserByUsername(connectE.getEmail());
       String nickname = (user_e.getSubnickname() != null && !user_e.getSubnickname().isEmpty()) ?
-          user_e.getSubnickname() : user_e.getNickname();
+      user_e.getSubnickname() : user_e.getNickname();
 
       Map<String, String> userMap = new HashMap<>();
       userMap.put("nickname", nickname);
-
-      String connectStatus = "";
 
       userMap.put("connect", connectE.getConnect());
 
@@ -64,9 +61,39 @@ public class ConnectViewController {
     return userList;
   }
 
+  @PutMapping ("/savesessionid")
+  public String receiveSessionId(@RequestBody SocketIdPayload payload) {
+    String socketId = payload.getSocketId();
+    System.out.println("받은 세션 ID: " + socketId);
+    // 여기서 세션 ID를 처리하는 로직을 추가할 수 있음
+    return "세션 ID 전송 완료";
+  }
 
+  // 세션 ID를 받기 위한 DTO 클래스
+  static class SocketIdPayload {
+    private String socketId;
 
+    public String getSocketId() {
+      return socketId;
+    }
 
+    public void setSocketId(String socketId) {
+      this.socketId = socketId;
+    }
+  }
+
+  // 세션 ID를 받기 위한 DTO 클래스
+  static class SessionIdPayload {
+    private String sessionId;
+
+    public String getSessionId() {
+      return sessionId;
+    }
+
+    public void setSessionId(String sessionId) {
+      this.sessionId = sessionId;
+    }
+  }
 
 
 

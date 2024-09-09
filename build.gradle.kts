@@ -52,9 +52,12 @@ dependencies { //라이브러리 넣는곳
 	//start test
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	//Mongo DB
-	implementation ("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
+	implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
+	implementation ("org.springframework.boot:spring-boot-starter-webflux")
 	//web socket
 	implementation("org.springframework.boot:spring-boot-starter-websocket")
+	//date -> json
+	implementation ("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.0")
 
 
 }

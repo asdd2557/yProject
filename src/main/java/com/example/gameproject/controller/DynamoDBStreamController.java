@@ -27,40 +27,35 @@ import java.util.Map;
 @Slf4j
 public class DynamoDBStreamController {
     @Autowired
-    private WebSocketHandler webSocketHandler;
+  private WebSocketHandler webSocketHandler;
   private final ConnectService connectService;
   private final UserDetailService userDetailService;
   @PostMapping("/data")
   public String receiveData(@RequestBody String jsonData) {
-    System.out.println("Received data: " + jsonData);
-    // 받은 데이터에 대한 처리 로직을 작성
-    // 예시: 받은 JSON 데이터를 파싱하여 원하는 작업을 수행
     try{
+
       ObjectMapper objectMapper = new ObjectMapper();
       JsonNode rootNode = objectMapper.readTree(jsonData);
-
       JsonNode recordsNode  = rootNode.path("records");
       for(JsonNode recordNode : recordsNode){
         String eventName = recordNode.path("eventName").asText();
-        if("MODIFY".equals(eventName)){
-
+        if("MODIFY".equals(eventName) || "REMOVE".equals(eventName) || "INSERT".equals(eventName)){
           List<Map<String, String>> userList = new ArrayList<>();
           List<Connect_E> connectEs = new ArrayList<>();
           connectEs.addAll(connectService.loadByConnect("1"));
           connectEs.addAll(connectService.loadByConnect("2"));
           connectEs.addAll(connectService.loadByConnect("3"));
-
           for (Connect_E connectE : connectEs) {
             User_E user_e = userDetailService.loadUserByUsername(connectE.getEmail());
             String nickname = (user_e.getSubnickname() != null && !user_e.getSubnickname().isEmpty()) ?
-                user_e.getSubnickname() : user_e.getNickname();
-
+            user_e.getSubnickname() : user_e.getNickname();
             Map<String, String> userMap = new HashMap<>();
+            userMap.put("type", "userList");
             userMap.put("nickname", nickname);
             userMap.put("email", connectE.getEmail());
             userMap.put("position", connectE.getPosition());
             userMap.put("connect", connectE.getConnect());
-
+            userMap.put("socket", connectE.getSocket());
             userList.add(userMap);
           }
           String userListJson = objectMapper.writeValueAsString(userList);

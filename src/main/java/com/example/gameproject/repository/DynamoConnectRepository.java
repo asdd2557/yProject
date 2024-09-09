@@ -1,22 +1,22 @@
 package com.example.gameproject.repository;
 
-
 import com.example.gameproject.dto.Connect_A;
 import com.example.gameproject.entity.Connect_E;
-import com.example.gameproject.entity.Connect_E;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Repository;
 import software.amazon.awssdk.core.pagination.sync.SdkIterable;
 import software.amazon.awssdk.enhanced.dynamodb.*;
 import software.amazon.awssdk.enhanced.dynamodb.model.*;
 import software.amazon.awssdk.regions.Region;
-import software.amazon.awssdk.services.dynamodb.streams.DynamoDbStreamsAsyncClient;
+import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
+import software.amazon.awssdk.services.dynamodb.model.UpdateItemRequest;
 import software.amazon.awssdk.services.dynamodb.streams.DynamoDbStreamsClient;
 
 import javax.persistence.Index;
 import javax.persistence.Table;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class DynamoConnectRepository {
@@ -26,8 +26,9 @@ public class DynamoConnectRepository {
   public DynamoConnectRepository(DynamoDbEnhancedClient dynamoDbEnhancedClient) {
     this.connectDynamoDbTable = dynamoDbEnhancedClient.table("Connect", TableSchema.fromBean(Connect_E.class));
   }
-  public void dynamoDbStream(){
-    DynamoDbStreamsClient  dynamoDbEnhancedClient = DynamoDbStreamsClient.builder()
+
+  public void dynamoDbStream() {
+    DynamoDbStreamsClient dynamoDbEnhancedClient = DynamoDbStreamsClient.builder()
         .region(Region.AP_SOUTHEAST_2)
         .build();
   }
@@ -45,7 +46,6 @@ public class DynamoConnectRepository {
   public Connect_E findBy(Connect_E connectE) {
     return connectDynamoDbTable.getItem(connectE);
   }
-
 
   public List<Connect_E> findByConnectAll(String connect) {
     DynamoDbIndex<Connect_E> index = connectDynamoDbTable.index("connect-index");
@@ -82,9 +82,9 @@ public class DynamoConnectRepository {
     return connectDynamoDbTable.updateItem(connectE);
   }
 
-  public void delete(Connect_E connectE) {
-    connectDynamoDbTable.deleteItem(connectE);
-  }
+
+
+
 
 
 }

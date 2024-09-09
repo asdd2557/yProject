@@ -1,7 +1,15 @@
+/*
     var socket = new WebSocket("ws://godding-elastic-env-2.eba-mygzmyet.ap-northeast-2.elasticbeanstalk.com/home/ws");
 
-    socket.onopen = function() {
+    var sessionId = ""; // 세션 ID 변수 초기화
+
+
+    socket.onopen = function(event) {
+        socket.send(JSON.stringify({ token: 'your_token_here', data: 'your_data_here' }));
+
         console.log("WebSocket connection established");
+            sessionId = event.currentTarget.url.split("?")[1].split("=")[1];
+            console.log("세션 ID:", sessionId);
     };
 
     socket.onmessage = function(event) {
@@ -20,11 +28,7 @@
     socket.onerror = function(error) {
         console.log("WebSocket error: ", error);
     };
-
-
-
-
-
+*/
 
 
     // 사용자 목록을 HTML에 표시하는 함수

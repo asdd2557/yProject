@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Data
@@ -21,6 +22,10 @@ public class Game_E {
   @Indexed
   private String user2;
   @Indexed
+  private String[][] table;
+  @Indexed
+  List<String [][]> tableLog;
+  @Indexed
   private String turn;
   @Indexed
   private String time;
@@ -31,7 +36,8 @@ public class Game_E {
    gameA.setUser2(gameE.getUser2());
    gameA.setTurn(gameA.getTurn());
    gameA.setTime(gameA.getTime());
+   gameA.setTable(gameA.getTable());
+   gameA.setTableLog(gameA.getTableLog());
    return gameA;
  }
-
 }
