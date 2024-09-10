@@ -139,11 +139,12 @@ public class BoardController {
           System.out.println("둘다 해당하지 않음: " + table[Integer.parseInt(point[0])][Integer.parseInt(point[1])]);
           returnColor = null;
         }
+
         if (returnColor != null) {
           if (returnColor.equals("Black"))
             boardService.boardTimerMove(gameE.getUser2(), gameE.getUser1());
           if (returnColor.equals("White"))
-            boardService.boardTimerMove(gameE.getUser1(), gameE.getUser2()); //테스트를 위한 잠시 주석
+            boardService.boardTimerMove(gameE.getUser1(), gameE.getUser2()); //타이머
 
           gameE.setTable(table);
           gameE.getTableLog().add(table);
@@ -156,6 +157,7 @@ public class BoardController {
                 System.out.println("value: " + value);
                 System.out.println("returnColor: " + returnColor);
                 if (returnColor.equals("Black") && Objects.equals(value, "5")) {
+                  boardService.boardTimerStop();
                   System.out.println("흑이 이김");
                   boardService.UserVictoryAddOrSocketSend(gameE.getUser1());
                   boardService.UserDefeatAddOrSocketSend(gameE.getUser2());
@@ -163,10 +165,10 @@ public class BoardController {
                   return Mono.empty();
                 }
                 if (returnColor.equals("White") && Integer.parseInt(value) >= 5) {
+                  boardService.boardTimerStop();
                   System.out.println("백이 이김");
                   boardService.UserVictoryAddOrSocketSend(gameE.getUser2());
                   boardService.UserDefeatAddOrSocketSend(gameE.getUser1());
-
                   return Mono.empty();
                 }
                 webSocketHandler.sendMessageToTarget(objectMapper.writeValueAsString(msg), targetSocketId);

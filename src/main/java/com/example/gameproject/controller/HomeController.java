@@ -24,7 +24,7 @@ import java.security.Principal;
 @Slf4j //로깅을 위한 거(어노테이션) 로깅 : 뭐든 기록하는거
 @RequiredArgsConstructor
 public class HomeController {
-  @GetMapping("/home")
+  @GetMapping("/")
   public String homePage() {
     return "home/home";
   }

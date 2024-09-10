@@ -52,17 +52,19 @@ public class BoardService {
   }
 
   public void boardTimerMove(String userName1, String userName2){
-    if(scheduledFuture != null){
-
-      scheduledFuture.cancel(true);
-    }
+    boardTimerStop();
     scheduledFuture = threadPoolTaskScheduler.schedule(() -> {
       try {UserDefeatAddOrSocketSend(userName1);
           UserVictoryAddOrSocketSend(userName2);
       } catch (JsonProcessingException e) {throw new RuntimeException(e);}
     }, new Date(System.currentTimeMillis() + 15000));
   }
+public void boardTimerStop(){
+  if(scheduledFuture != null){
 
+    scheduledFuture.cancel(true);
+  }
+}
 
   public void UserDefeatAddOrSocketSend(String userName) throws JsonProcessingException {
     Map<String, String> msg = new HashMap<>();

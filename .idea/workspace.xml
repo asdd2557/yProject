@@ -4,7 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8115cda0-f993-49f9-bdd1-01d5d5f46fca" name="변경" comment="stream test backup" />
+    <list default="true" id="8115cda0-f993-49f9-bdd1-01d5d5f46fca" name="변경" comment="stream test backup">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/config/WebOauthSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/config/WebOauthSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/config/oauth/OAuth2SuccessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/gameproject/config/oauth/OAuth2SuccessHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/search/ID_Duplicate_Check_JS.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/search/ID_Duplicate_Check_JS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/search/Search_ID_JS.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/search/Search_ID_JS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/postdetail/postdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/postdetail/postdetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/WebOauthSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/WebOauthSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/oauth/OAuth2SuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/oauth/OAuth2SuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/websocket/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/config/websocket/WebSocketConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gameproject/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gameproject/service/BoardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/connect/socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/connect/socket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/dialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/search/ID_Duplicate_Check_JS.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/search/ID_Duplicate_Check_JS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/search/Search_ID_JS.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/search/Search_ID_JS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/postdetail/postdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/postdetail/postdetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sub/dialog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/sub/dialog.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,31 +116,31 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Gradle.C:/Users/82108/Desktop/intelij/yproject/GameProject [GameProjectApplication.main()].executor": "Run",
-    "Gradle.GameProject [:GameProjectApplication.main()].executor": "Run",
-    "Gradle.GameProject [build].executor": "Run",
-    "Gradle.GameProject [clean].executor": "Run",
-    "Gradle.JUnitTest.junitTest.executor": "Run",
-    "Gradle.JUnitTest.junitTestfail.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/82108/Desktop/intelij/yproject/yproject/GameProject",
-    "onboarding.tips.debug.path": "C:/Users/82108/Desktop/intelij/yproject/GameProject/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "모듈",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Gradle.C:/Users/82108/Desktop/intelij/yproject/GameProject [GameProjectApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GameProject [:GameProjectApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GameProject [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GameProject [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JUnitTest.junitTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JUnitTest.junitTestfail.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/82108/Desktop/intelij/yproject/yproject/Lambda&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/82108/Desktop/intelij/yproject/GameProject/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.gameproject.config.websocket" />
@@ -142,7 +175,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GameProject [build]">
+  <component name="RunManager" selected="Gradle.GameProject [clean]">
     <configuration name="GameProjectApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.gameproject.GameProjectApplication" />
       <module name="GameProject.main" />
@@ -250,8 +283,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.GameProject [build]" />
         <item itemvalue="Gradle.GameProject [clean]" />
+        <item itemvalue="Gradle.GameProject [build]" />
         <item itemvalue="애플리케이션.GameProjectApplication" />
         <item itemvalue="Gradle.JUnitTest.junitTestfail" />
         <item itemvalue="Gradle.JUnitTest.junitTest" />

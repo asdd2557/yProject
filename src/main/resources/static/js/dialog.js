@@ -6,6 +6,7 @@ msgInput();
 
 document.querySelector("#chatOutput").addEventListener("keydown", (e) => {
     if (e.keyCode === 13) {
+    sendMessage();
 msgInput();
 }
 });

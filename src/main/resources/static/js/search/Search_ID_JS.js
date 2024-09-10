@@ -10,7 +10,7 @@ searchForm.addEventListener('submit', function(event) {
     const id = document.getElementById('id').value;
 
     // 서버로 보낼 요청 URL을 생성합니다.
-    const url = `/home/searchid?id=${id}`;
+    const url = `/searchid?id=${id}`;
 
     // 서버로 GET 요청을 보냅니다.
     fetch(url)

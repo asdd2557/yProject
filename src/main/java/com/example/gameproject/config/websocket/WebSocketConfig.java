@@ -25,7 +25,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
 
   @Override
   public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-    registry.addHandler(webSocketHandler(), "/home/ws")
+    registry.addHandler(webSocketHandler(), "/ws")
         .addInterceptors(new HttpSessionHandshakeInterceptor(), new CustomHandshakeInterceptor(tokenProvider))
         .setAllowedOrigins("*"); // CORS 설정
   }

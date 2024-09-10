@@ -4,7 +4,7 @@ function checkDuplicate() {
 
     // AJAX를 사용하여 컨트롤러로 ID 값을 전송
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/home/checkDuplicate?id=' + userId, true);
+    xhr.open('GET', '/checkDuplicate?id=' + userId, true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             // 응답 처리

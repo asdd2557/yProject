@@ -66,7 +66,7 @@ public WebSecurityCustomizer configure(){
       .antMatchers("/api/token").permitAll()
       .antMatchers("/api/**").authenticated()//인증이 필요함
       .antMatchers("/mong_save").authenticated()//인증이 필요함
-      .antMatchers("/home/ws").permitAll()
+      .antMatchers("/ws").permitAll()
       .anyRequest().permitAll();
 
 

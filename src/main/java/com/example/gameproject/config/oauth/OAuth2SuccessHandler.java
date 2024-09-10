@@ -29,7 +29,7 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
   public static final String REFRESH_TOKEN_COOKIE_NAME = "refresh_token";
   public static final Duration REFRESH_TOKEN_DURATION = Duration.ofDays(14);
   public static final Duration ACCESS_TOKEN_DURATION = Duration.ofDays(1);
-  public static final String REDIRECT_PATH = "/home";
+  public static final String REDIRECT_PATH = "/";
 
 
   private final TokenProvider tokenProvider;
@@ -37,7 +37,7 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
   private final OAuth2AuthorizationRequestBasedOnCookieRepository authorizationRequestRepository;
   private final DynamoUserRepository dynamoUserRepository;
 
-
+/*
   //최초 로그인 할시 실행됨
   @Override
   public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
@@ -61,8 +61,6 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
 
     // 2. 액세스 토큰 생성 -> 패스에 액세스 토큰 추가
     String accessToken = tokenProvider.generateToken(user_e, ACCESS_TOKEN_DURATION);
-    System.out.println("onAuthenticationSuccess User Name: " + user_e.getNickname());
-    System.out.println("onAuthenticationSuccess AccessToken: " + accessToken);
     String targetUrl = getTargetUrl(accessToken);
     // 3. 인증 관련 설정값, 쿠키 제거
     clearAuthenticationAttributes(request, response);
@@ -71,7 +69,41 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
     getRedirectStrategy().sendRedirect(request, response, targetUrl);
 
 
+  }*/
+
+
+  @Override
+  public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
+    OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
+
+    // 프로필 사진 쿠키에 추가
+    addProfilePictureUrlCookie(response, oAuth2User);
+
+    // OAuth2에서 가져온 이메일을 통해 사용자 정보 조회
+    User_E user_e = dynamoUserRepository.findByEmail((String) oAuth2User.getAttributes().get("email"));
+
+    // 1. 리프레시 토큰 생성
+    String refreshToken = tokenProvider.generateToken(user_e, REFRESH_TOKEN_DURATION);
+
+    // 2. 리프레시 토큰을 데이터베이스에 저장 또는 업데이트
+    saveRefreshToken(user_e.getId(), refreshToken);
+
+    // 3. 리프레시 토큰을 쿠키에 저장
+    addRefreshTokenToCookie(request, response, refreshToken);
+
+    // 4. 액세스 토큰 생성
+    String accessToken = tokenProvider.generateToken(user_e, ACCESS_TOKEN_DURATION);
+
+    // 5. 액세스 토큰을 쿠키에 저장
+    CookieUtil.addCookie(response, "access_token", accessToken, (int) ACCESS_TOKEN_DURATION.toSeconds());
+
+    // 6. 인증 관련 설정값, 쿠키 제거
+    clearAuthenticationAttributes(request, response);
+
+    // 7. URL에 토큰을 포함하지 않고 리디렉트 (토큰은 쿠키에 포함되어 전송됨)
+    getRedirectStrategy().sendRedirect(request, response, REDIRECT_PATH);
   }
+
 
   //생성된 리프레시 토큰을 전달받아 데이터 베이스에 저장
   private void saveRefreshToken(String userId, String newRefreshToken) {
